@@ -1,41 +1,39 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function App() {
-  return (
-    <View style = {sectionStyles.container}>
-        <View style = {sectionStyles.header}>
-            <Text style = {elementStyles.title}>
-                FLARE
-            </Text>
-        </View>
-        <View style = {sectionStyles.body}>
+export default class App extends React.Component {
+    render() {
+        return (
+            <View style = {sectionStyles.container}>
+                <View style = {sectionStyles.header}>
+                    <Image
+                        style = {elementStyles.title}
+                        source = {require('../Flare/assets/titleicon.png')}
+                    />
+                </View>
+                <View style = {sectionStyles.body}>
 
-        </View>
-        <View style = {sectionStyles.footer}>
-            <View style = {elementStyles.button}>
+                </View>
+                <View style = {sectionStyles.footer}>
+                    <View style = {elementStyles.button}></View>
+                    <View style = {elementStyles.button}></View>
+                </View>
 
             </View>
-            <View style = {elementStyles.button}>
-
-            </View>
-        </View>
-
-    </View>
-  );
+        );
+    }
 }
 
 const UI_THEME_COLOR_ONE = '#ff425e';
 const UI_THEME_COLOR_TWO = '#ffffff';
 const UI_THEME_FONT_ONE = 'Verdana';
 
+const UI_THEME_TITLE_SIZE = '90%';
+
 const elementStyles = StyleSheet.create({
     title: {
-        color: UI_THEME_COLOR_TWO,
-        fontFamily: UI_THEME_FONT_ONE,
-
-        fontSize: 65,
-        textAlign: 'center',
+        resizeMode: 'contain',
+        height: UI_THEME_TITLE_SIZE,
     },
     button: {
         backgroundColor: UI_THEME_COLOR_TWO,
