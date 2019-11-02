@@ -1,5 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, StatusBar} from 'react-native';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    StatusBar,
+    Button,
+    Alert,} from 'react-native';
 
 export default class App extends React.Component {
     render() {
@@ -19,8 +26,12 @@ export default class App extends React.Component {
 
                 </View>
                 <View style = {sectionStyles.footer}>
-                    <View style = {elementStyles.button}></View>
-                    <View style = {elementStyles.button}></View>
+                    <View style = {elementStyles.button}>
+                        <Button title="INFO" onPress={() => Alert.alert('INFO pressed')}/>
+                    </View>
+                    <View style = {elementStyles.button}>
+                        <Button title="CAM" onPress={() => Alert.alert('CAM pressed')}/>
+                    </View>
                 </View>
 
             </View>
