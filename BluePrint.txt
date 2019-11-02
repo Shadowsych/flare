@@ -26,3 +26,5 @@ Color Scheme
 
 Red - RED
 White - WHITE
+
+font - verdana italics

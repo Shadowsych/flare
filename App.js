@@ -27,11 +27,13 @@ export default function App() {
 
 const UI_THEME_COLOR_ONE = '#ff425e';
 const UI_THEME_COLOR_TWO = '#ffffff';
+const UI_THEME_FONT_ONE = 'Verdana';
 
 const elementStyles = StyleSheet.create({
     title: {
         color: UI_THEME_COLOR_TWO,
-        fontWeight: 'bold',
+        fontFamily: UI_THEME_FONT_ONE,
+        
         fontSize: 65,
         textAlign: 'center',
     },
