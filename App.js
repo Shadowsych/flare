@@ -33,7 +33,7 @@ const elementStyles = StyleSheet.create({
     title: {
         color: UI_THEME_COLOR_TWO,
         fontFamily: UI_THEME_FONT_ONE,
-        
+
         fontSize: 65,
         textAlign: 'center',
     },
