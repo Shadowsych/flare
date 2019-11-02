@@ -1,10 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, StatusBar} from 'react-native';
 
 export default class App extends React.Component {
     render() {
         return (
+
             <View style = {sectionStyles.container}>
+
+                <StatusBar hidden={1} />
+
                 <View style = {sectionStyles.header}>
                     <Image
                         style = {elementStyles.title}
