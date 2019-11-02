@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
+    AppRegistry,
     StyleSheet,
     Text,
     View,
@@ -8,14 +9,13 @@ import {
     Button,
     Alert,} from 'react-native';
 
-export default class App extends React.Component {
-    render() {
+//import Title from '../Flare/components/Title';
+
+export default class App extends Component {
+    render = () => {
         return (
-
             <View style = {sectionStyles.container}>
-
                 <StatusBar hidden={1} />
-
                 <View style = {sectionStyles.header}>
                     <Image
                         style = {elementStyles.title}
@@ -23,7 +23,6 @@ export default class App extends React.Component {
                     />
                 </View>
                 <View style = {sectionStyles.body}>
-
                 </View>
                 <View style = {sectionStyles.footer}>
                     <View style = {elementStyles.button}>
