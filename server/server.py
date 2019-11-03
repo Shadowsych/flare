@@ -74,6 +74,7 @@ def get_predicted_population_density(predictions, categories):
 
     # receive the category with the highest predicted possibility
     while(current_category < len(predictions[0])):
+        print(predictions[0][current_category])
         if(predictions[0][current_category] > predictions[0][best_category]):
             # update the best category
             best_category = current_category
