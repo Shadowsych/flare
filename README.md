@@ -1,4 +1,4 @@
-<img src="https://rawcdn.githack.com/Shadowsych/flare/master/assets/splash.png" width="250" height="250"/>
+<img src="https://raw.githubusercontent.com/Shadowsych/flare/master/assets/splash.png" width="250" height="250"/>
 
 # Flare
 A React Native mobile application that analyzes the victim density from drone/bird-eye viewed images using deep learning.
