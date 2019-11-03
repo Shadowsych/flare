@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     Image,
     StatusBar,
+    Platform,
     Button,
     Alert} from 'react-native';
 
@@ -104,7 +105,7 @@ export default class Map extends Component {
 
 const UI_THEME_COLOR_ONE = '#ff425e';
 const UI_THEME_COLOR_TWO = 'rgba(255,66,94,0)';
-const UI_THEME_FONT_ONE = 'Verdana';
+const UI_THEME_FONT_ONE = Platform.OS == "ios" ? "Verdana" : "Roboto";
 
 const UI_THEME_TITLE_SIZE = '59%';
 
