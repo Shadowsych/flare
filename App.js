@@ -7,8 +7,10 @@ import {
     Image,
     StatusBar,
     Button,
-    Alert,} from 'react-native';
+    Alert,
+    Navigation} from 'react-native';
 
+import LinearGradient from 'react-native-linear-gradient';
 import CameraButton from './components/CameraButton';
 import InfoButton from './components/InfoButton';
 import PopulationMap from './components/PopulationMap';
@@ -16,6 +18,7 @@ import PopulationMap from './components/PopulationMap';
 export default class App extends Component {
     render = () => {
         return (
+            /*T*/
             <View style = {sectionStyles.container}>
                 <StatusBar hidden={1} />
                 <View style = {sectionStyles.header}>
@@ -49,12 +52,13 @@ const UI_THEME_COLOR_ONE = '#ff425e';
 const UI_THEME_COLOR_TWO = '#ffffff';
 const UI_THEME_FONT_ONE = 'Verdana';
 
-const UI_THEME_TITLE_SIZE = '90%';
+const UI_THEME_TITLE_SIZE = '59%';
 
 const elementStyles = StyleSheet.create({
     title: {
         resizeMode: 'contain',
         height: UI_THEME_TITLE_SIZE,
+        top: 10,
     },
     button: {
         width: 50,
@@ -69,10 +73,13 @@ const elementStyles = StyleSheet.create({
 
 const sectionStyles = StyleSheet.create({
     header: {
+        zIndex: 1,
+        top: -20,
+        position: 'absolute',
         backgroundColor: UI_THEME_COLOR_ONE,
-        width: '100%',
+        width: '65%',
         height: '10%',
-
+        borderRadius: 20,
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
@@ -80,14 +87,15 @@ const sectionStyles = StyleSheet.create({
     body: {
         backgroundColor: 'white',
         width: '100%',
-        height: '80%',
+        height: '100%',
 
     },
     footer: {
+        bottom: 0,
         backgroundColor: UI_THEME_COLOR_ONE,
         width: '100%',
-        height: '10%',
-
+        height: '8%',
+        position: 'absolute',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
