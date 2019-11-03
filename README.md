@@ -3,6 +3,9 @@
 # Flare
 A React Native mobile application that analyzes the victim density from drone/bird-eye viewed images using deep learning.
 
+# Devpost
+https://devpost.com/software/flare-e1ljfz
+
 # Developers
 - Pravat Bhusal (Deep Learning and Full-stack Developer)
 - Michael Kasman (Deep Learning and Server-side Developer)
