@@ -1,7 +1,7 @@
 import {AppRegistry, Platform, StatusBar} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from "react-navigation-stack";
-import {fromBottom, fromTop, fromLeft, zoomIn} from 'react-navigation-transitions';
+import {fromRight, fromTop, fromLeft, zoomIn} from 'react-navigation-transitions';
 
 // screens
 import Map from "./screens/Map";
@@ -15,7 +15,7 @@ const handleCustomTransition = ({ scenes }) => {
   if(prevScene &&
     prevScene.route.routeName == "Map"
     && nextScene.route.routeName == "Info") {
-      return fromBottom();
+      return fromRight();
   }
   // by default, open the page from the left
   return fromLeft();
