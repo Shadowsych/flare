@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
+    AppRegistry,
     StyleSheet,
     Text,
     View,
@@ -8,14 +9,15 @@ import {
     Button,
     Alert,} from 'react-native';
 
-export default class App extends React.Component {
-    render() {
+import CameraButton from './components/CameraButton';
+import InfoButton from './components/InfoButton';
+import PopulationMap from './components/PopulationMap';
+
+export default class App extends Component {
+    render = () => {
         return (
-
             <View style = {sectionStyles.container}>
-
                 <StatusBar hidden={1} />
-
                 <View style = {sectionStyles.header}>
                     <Image
                         style = {elementStyles.title}
@@ -24,13 +26,17 @@ export default class App extends React.Component {
                 </View>
                 <View style = {sectionStyles.body}>
 
+
+                <PopulationMap/>
+
+
                 </View>
                 <View style = {sectionStyles.footer}>
                     <View style = {elementStyles.button}>
-                        <Button title="INFO" onPress={() => Alert.alert('INFO pressed')}/>
+                        <InfoButton/>
                     </View>
                     <View style = {elementStyles.button}>
-                        <Button title="CAM" onPress={() => Alert.alert('CAM pressed')}/>
+                        <CameraButton/>
                     </View>
                 </View>
 
@@ -51,12 +57,13 @@ const elementStyles = StyleSheet.create({
         height: UI_THEME_TITLE_SIZE,
     },
     button: {
-        backgroundColor: UI_THEME_COLOR_TWO,
-        width: 75,
-        height: 45,
+        width: 50,
+        height: 50,
 
         margin: 20,
-        borderRadius: 100,
+
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
 
@@ -93,3 +100,5 @@ const sectionStyles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+AppRegistry.registerComponent('App', () => App);
