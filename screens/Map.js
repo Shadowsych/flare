@@ -10,6 +10,9 @@ import {
     Button,
     Alert} from 'react-native';
 
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from "expo-permissions";
+
 import {LinearGradient} from 'expo-linear-gradient';
 import CameraButton from '../components/CameraButton';
 import InfoButton from '../components/InfoButton';
@@ -41,13 +44,52 @@ export default class Map extends Component {
                     <TouchableOpacity onPress={() => this.loadInfoPage()} style = {elementStyles.button}>
                         <InfoButton/>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.loadCameraPage()} style = {elementStyles.button}>
+                    <TouchableOpacity onPress={() => this.uploadPictureDemo()} style = {elementStyles.button}>
                         <CameraButton/>
                     </TouchableOpacity>
                 </LinearGradient>
 
             </View>
         );
+    }
+
+    // upload a picture demonstration
+    async uploadPictureDemo() {
+      await Permissions.askAsync(Permissions.CAMERA);
+      await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+      // open the camera, then await for the user to take a picture
+      let picture = await ImagePicker.launchCameraAsync({
+        base64: true,
+        quality: 0.2,
+        allowsEditing: true,
+        aspect: [4, 3]
+      });
+
+      if(!picture.cancelled) {
+        // send the picture to the server
+        let pictureBase64 = `${picture.base64}`;
+
+        // create the form data for the fetch request
+        let formData = new FormData();
+        formData.append("pictureBase64", pictureBase64);
+
+        // send an HTTP request to the server to predict the population density
+        await fetch("http://172.20.10.5:5000/predict_density", {
+          method: "POST",
+          body: formData,
+          header: {
+            "content-type": "multipart/form-data",
+          },
+        }).then((resolved) => {
+          resolved.json().then((data) => {
+            Alert.alert("Test", data);
+          });
+        }).catch((error) => {
+          Alert.alert("Connection error!", error.message);
+          return;
+        });
+      }
     }
 
     // load the information page
@@ -95,7 +137,6 @@ const sectionStyles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
         height: '100%',
-
     },
     footer: {
         bottom: 0,

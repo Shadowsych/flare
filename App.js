@@ -41,3 +41,6 @@ const Navigation = createStackNavigator({
 // export the App class as an app container
 const App = createAppContainer(Navigation);
 export default App;
+
+// disable yellow Expo warning boxes
+console.disableYellowBox = true;
