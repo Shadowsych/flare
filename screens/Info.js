@@ -35,7 +35,7 @@ export default class Info extends Component {
                         source = {require('../assets/orange.png')}
                     />
                     <Text style = {elementStyles.helpText}>
-                        - Medium Density (6-30 Victims)
+                        - Medium Density (6-14 Victims)
                     </Text>
                 </View>
                 <View style = {elementStyles.helpBox}>
@@ -44,7 +44,7 @@ export default class Info extends Component {
                         source = {require('../assets/red.png')}
                     />
                     <Text style = {elementStyles.helpText}>
-                        - High Density (More Than 31 Victims)
+                        - High Density (More Than 15 Victims)
                     </Text>
                 </View>
 
