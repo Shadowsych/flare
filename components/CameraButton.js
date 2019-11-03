@@ -2,12 +2,8 @@ import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
-    Text,
     View,
-    Image,
-    StatusBar,
-    Button,
-    Alert,} from 'react-native';
+    Image,} from 'react-native';
 
 export default class CameraButton extends Component {
 

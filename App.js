@@ -11,6 +11,7 @@ import {
 
 import CameraButton from './components/CameraButton';
 import InfoButton from './components/InfoButton';
+import PopulationMap from './components/PopulationMap';
 
 export default class App extends Component {
     render = () => {
@@ -24,6 +25,11 @@ export default class App extends Component {
                     />
                 </View>
                 <View style = {sectionStyles.body}>
+
+
+                <PopulationMap/>
+
+
                 </View>
                 <View style = {sectionStyles.footer}>
                     <View style = {elementStyles.button}>
