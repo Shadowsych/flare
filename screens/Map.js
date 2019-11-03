@@ -45,6 +45,7 @@ export default class Map extends Component {
           latitudeDelta: 0.005
         },
         markers: [
+            
         ]
       }
 
@@ -94,7 +95,10 @@ export default class Map extends Component {
                                     }}
                                     centerOffset = {{x: 0, y: -25}}
                                 >
-                                    {this.renderMarkerIcon(marker.risk)}
+                                    <TouchableOpacity onPress={() => this.loadInfoPage()} style = {elementStyles.button}>
+                                        {this.renderMarkerIcon(marker.risk)}
+                                    </TouchableOpacity>
+
                                 </MapView.Marker>
                             ))}
                             </MapView>
@@ -167,6 +171,11 @@ export default class Map extends Component {
     // load the information page
     loadInfoPage() {
       this.props.navigation.navigate("Info");
+    }
+
+    // load the photo page
+    loadPhotoPage() {
+      this.props.navigation.navigate("Picture");
     }
 
     // upload a picture demonstration

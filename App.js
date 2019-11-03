@@ -6,6 +6,7 @@ import {fromRight, fromTop, fromLeft, zoomIn} from 'react-navigation-transitions
 // screens
 import Map from "./screens/Map";
 import Info from "./screens/Info";
+import Picture from "./screens/Picture";
 
 // custom animation transitions
 const handleCustomTransition = ({ scenes }) => {
@@ -17,18 +18,26 @@ const handleCustomTransition = ({ scenes }) => {
     && nextScene.route.routeName == "Info") {
       return fromRight();
   }
+  if(prevScene &&
+    prevScene.route.routeName == "Map"
+    && nextScene.route.routeName == "Picture") {
+      return fromRight();
+  }
   // by default, open the page from the left
   return fromLeft();
 }
 
 // create the stackNavigator that holds all the pages (Intents)
 const Navigation = createStackNavigator({
-  Map: {
-    screen: Map
-  },
-	Info: {
-		screen: Info
-	}
+    Map: {
+        screen: Map
+    },
+    Info: {
+        screen: Info
+    },
+    Picture: {
+        screen: Picture
+    }
 }, {
   // default navigation options
   defaultNavigationOptions: {
