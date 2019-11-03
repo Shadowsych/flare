@@ -10,7 +10,7 @@ import {
     Alert,
     Navigation} from 'react-native';
 
-import LinearGradient from 'react-native-linear-gradient';
+import {LinearGradient} from 'expo-linear-gradient';
 import CameraButton from './components/CameraButton';
 import InfoButton from './components/InfoButton';
 import PopulationMap from './components/PopulationMap';
@@ -34,14 +34,18 @@ export default class App extends Component {
 
 
                 </View>
-                <View style = {sectionStyles.footer}>
+                <LinearGradient
+                        colors={[UI_THEME_COLOR_ONE, 'rgba(255,66,94,0)']}
+                        start={{ x: 0, y: .95 }}
+                        end={{ x: 0, y: .3 }}
+                        style = {sectionStyles.footer}>
                     <View style = {elementStyles.button}>
                         <InfoButton/>
                     </View>
                     <View style = {elementStyles.button}>
                         <CameraButton/>
                     </View>
-                </View>
+                </LinearGradient>
 
             </View>
         );
@@ -63,9 +67,8 @@ const elementStyles = StyleSheet.create({
     button: {
         width: 50,
         height: 50,
-
+        top: 35,
         margin: 20,
-
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -92,9 +95,8 @@ const sectionStyles = StyleSheet.create({
     },
     footer: {
         bottom: 0,
-        backgroundColor: UI_THEME_COLOR_ONE,
         width: '100%',
-        height: '8%',
+        height: '20%',
         position: 'absolute',
         flexDirection: 'row',
         alignItems: 'center',
