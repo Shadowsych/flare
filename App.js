@@ -8,7 +8,7 @@ import {
     StatusBar,
     Button,
     Alert,
-    Navigation} from 'react-native';
+    Navigator} from 'react-native';
 
 import {LinearGradient} from 'expo-linear-gradient';
 import CameraButton from './components/CameraButton';
@@ -18,15 +18,21 @@ import PopulationMap from './components/PopulationMap';
 export default class App extends Component {
     render = () => {
         return (
-            /*T*/
+            <Navigator initialRoute = { (id: 'HomePage') }>
+
+
+            /*Primary Page*/
             <View style = {sectionStyles.container}>
+                /*Hide Mobile Status Bar*/
                 <StatusBar hidden={1} />
+                /*Header which contains app title*/
                 <View style = {sectionStyles.header}>
                     <Image
                         style = {elementStyles.title}
                         source = {require('../Flare/assets/titleicon.png')}
                     />
                 </View>
+                /*Body section containing map component*/
                 <View className = 'body' style = {sectionStyles.body}>
 
 
@@ -34,11 +40,13 @@ export default class App extends Component {
 
 
                 </View>
+                /*Footer containing navigation tab to camera and info*/
                 <LinearGradient
-                        colors={[UI_THEME_COLOR_ONE, 'rgba(255,66,94,0)']}
+                        colors={[UI_THEME_COLOR_ONE, UI_THEME_COLOR_TWO]}
                         start={{ x: 0, y: .95 }}
                         end={{ x: 0, y: .3 }}
                         style = {sectionStyles.footer}>
+                    /*Navigation*/
                     <View style = {elementStyles.button}>
                         <InfoButton/>
                     </View>
@@ -53,7 +61,7 @@ export default class App extends Component {
 }
 
 const UI_THEME_COLOR_ONE = '#ff425e';
-const UI_THEME_COLOR_TWO = '#ffffff';
+const UI_THEME_COLOR_TWO = 'rgba(255,66,94,0)';
 const UI_THEME_FONT_ONE = 'Verdana';
 
 const UI_THEME_TITLE_SIZE = '59%';
