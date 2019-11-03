@@ -7,16 +7,32 @@ import {
     Image,
     Dimensions} from 'react-native';
 
+import {
+    Appearance,
+    AppearanceProvider,
+    useColorScheme } from 'react-native-appearance';
+
+
 export default class PopulationMap extends Component {
 
     render() {
         return (
             <View>
-                <MapView style={elementStyles.mapStyle} />
+                <AppearanceProvider>
+                    <MapView
+                        style={elementStyles.mapStyle}
+                        mapType = 'standard'
+                        showsUserLocation = {true}
+                        followsUserLocation = {true}
+                        maxZoomLevel = {20}
+                    />
+                </AppearanceProvider>
             </View>
         )
     }
 }
+
+
 
 const elementStyles = StyleSheet.create({
     mapStyle: {

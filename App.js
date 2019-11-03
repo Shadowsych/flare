@@ -24,7 +24,7 @@ export default class App extends Component {
                         source = {require('../Flare/assets/titleicon.png')}
                     />
                 </View>
-                <View style = {sectionStyles.body}>
+                <View className = 'body' style = {sectionStyles.body}>
 
 
                 <PopulationMap/>
