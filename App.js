@@ -9,7 +9,8 @@ import {
     Button,
     Alert,} from 'react-native';
 
-//import Title from '../Flare/components/Title';
+import CameraButton from './components/CameraButton';
+import InfoButton from './components/InfoButton';
 
 export default class App extends Component {
     render = () => {
@@ -26,10 +27,10 @@ export default class App extends Component {
                 </View>
                 <View style = {sectionStyles.footer}>
                     <View style = {elementStyles.button}>
-                        <Button title="INFO" onPress={() => Alert.alert('INFO pressed')}/>
+                        <InfoButton/>
                     </View>
                     <View style = {elementStyles.button}>
-                        <Button title="CAM" onPress={() => Alert.alert('CAM pressed')}/>
+                        <CameraButton/>
                     </View>
                 </View>
 
@@ -50,12 +51,13 @@ const elementStyles = StyleSheet.create({
         height: UI_THEME_TITLE_SIZE,
     },
     button: {
-        backgroundColor: UI_THEME_COLOR_TWO,
-        width: 75,
-        height: 45,
+        width: 50,
+        height: 50,
 
         margin: 20,
-        borderRadius: 100,
+
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
 
@@ -92,3 +94,5 @@ const sectionStyles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+AppRegistry.registerComponent('App', () => App);
