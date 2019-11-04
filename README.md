@@ -1,4 +1,4 @@
-<img src="https://github.com/Shadowsych/flare/blob/master/assets/splash.png" width="250" height="250"/>
+<img src="assets/flare_screens.jpg" height="55%" width="55%"></img>
 
 # Flare
 A React Native mobile application that analyzes the victim density from drone/bird-eye viewed images using deep learning. The app utilizes a convolutional neural network to predict a victim density based on an aerial-view image.
